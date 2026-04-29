@@ -19,7 +19,7 @@ The goal is to help Google:
 
 ## 1. Market Overview — Platform Health Snapshot
 
-![Market Overview](./images/market_overview.png)
+![Market Overview](./screenshots/Market_Overview.jpeg)
 
 ###  Key Findings:
 - Total Apps: **2.3M**
@@ -45,7 +45,7 @@ The goal is to help Google:
 
 ## 2. Category Performance — Supply vs Quality vs Demand
 
-![Category Performance](./images/category_performance.png)
+![Category Performance](./screenshots/Category_Performance.jpeg)
 
 ###  Key Findings:
 -  Highest volume: **Education (~241K apps)**
@@ -67,7 +67,7 @@ The goal is to help Google:
 
 ##  3. Developer Intelligence — Ecosystem Structure
 
-![Developer Intelligence](./images/developer_intelligence.png)
+![Developer Intelligence](./screenshots/Developer_Intelligence.jpeg)
 
 ###  Key Findings:
 -  Developers: **758K**
@@ -92,7 +92,7 @@ The goal is to help Google:
 
 ##  4. Monetization & Pricing — Revenue Strategy
 
-![Monetization & Pricing](./images/monetization_pricing.png)
+![Monetization & Pricing](./screenshots/Monetization_&_Pricing.jpeg)
 
 ###  Key Findings:
 - Free Apps: **98.1%**
