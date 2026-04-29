@@ -1,8 +1,8 @@
 # Google Play Store Ecosystem Analytics (Tableau)
 
-# Tableu Public link : https://public.tableau.com/views/GooglePlayStoreAppsAnalysisDashboard/Dashboard2?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+Tableu Public link : https://public.tableau.com/views/GooglePlayStoreAppsAnalysisDashboard/Dashboard2?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
-## 🧭 Objective (Google’s Perspective)
+## Objective (Google’s Perspective)
 This dashboard analyzes the Google Play Store ecosystem from a **platform strategy perspective**.
 
 The goal is to help Google:
