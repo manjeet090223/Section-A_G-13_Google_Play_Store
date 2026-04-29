@@ -1,6 +1,6 @@
 # Google Play Store Ecosystem Analytics (Tableau)
 
-Tableu Public link : https://public.tableau.com/views/GooglePlayStoreAppsAnalysisDashboard/Dashboard2?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+Tableu Public link : https://public.tableau.com/views/GooglePlayStoreAppsAnalysisDynamicDashboard/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
 ## Objective (Google’s Perspective)
 This dashboard analyzes the Google Play Store ecosystem from a **platform strategy perspective**.
@@ -19,7 +19,7 @@ The goal is to help Google:
 
 ## 1. Market Overview — Platform Health Snapshot
 
-![Market Overview](./screenshots/Market_Overview.jpeg)
+![Market Overview](./screenshots/market_overview.png)
 
 ###  Key Findings:
 - Total Apps: **2.3M**
@@ -45,7 +45,7 @@ The goal is to help Google:
 
 ## 2. Category Performance — Supply vs Quality vs Demand
 
-![Category Performance](./screenshots/Category_Performance.jpeg)
+![Category Performance](./screenshots/category_performance.png)
 
 ###  Key Findings:
 -  Highest volume: **Education (~241K apps)**
@@ -67,21 +67,21 @@ The goal is to help Google:
 
 ##  3. Developer Intelligence — Ecosystem Structure
 
-![Developer Intelligence](./screenshots/Developer_Intelligence.jpeg)
+![Developer Intelligence](./screenshots/developer_intelligence.png)
 
 ###  Key Findings:
 -  Developers: **758K**
 -  Avg apps/dev: **3.05**
 -  Single-app devs: **64.67%**
 -  Top developer installs: **93B+**
--  IAP adoption: **~64%**
+-  IAP adoption: **~8.4%**
 
 ###  Google-Level Insights:
 - Strong **long-tail ecosystem**:
   - Majority developers publish only 1 app
   - A small group dominates installs
 - Ecosystem follows a **power-law distribution**
-- IAP adoption is high → strong monetization maturity
+- IAP adoption is low → weak monetization maturity
 
 ###  Strategic Implications:
 - Provide tools to help **small developers scale**
@@ -92,7 +92,7 @@ The goal is to help Google:
 
 ##  4. Monetization & Pricing — Revenue Strategy
 
-![Monetization & Pricing](./screenshots/Monetization_&_Pricing.jpeg)
+![Monetization & Pricing](./screenshots/monetization_&_pricing.png)
 
 ###  Key Findings:
 - Free Apps: **98.1%**
