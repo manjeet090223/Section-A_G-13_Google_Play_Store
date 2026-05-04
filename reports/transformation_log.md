@@ -14,57 +14,79 @@
 ### 1. App Name — 5 Nulls
 | | |
 |---|---|
-| **Problem** | 5 apps had no name at all — completely empty |
-| **Why it matters** | An app without a name is corrupt/useless data |
-| **Fix** | Dropped (removed) those 5 rows entirely |
+| **Problem** | 5 apps had no name |
+| **Fix** | Dropped rows |
 | **Method** | `dropna(subset=['App Name'])` |
-| **Result** | 0 nulls → All apps have valid names |
+| **Result** | 0 nulls |
 
 ---
 
 ### 2. Rating — 22,883 Nulls
 | | |
 |---|---|
-| **Problem** | Missing rating values |
-| **Why it matters** | Required for analysis like averages and trends |
-| **Fix** | Filled NULLs with **Mean Rating** |
-| **Why Mean?** | Continuous numerical feature with reasonable distribution |
+| **Problem** | Missing ratings |
+| **Fix** | Filled with **Mean = 2.20** |
+| **Why Mean?** | Continuous feature, preserves overall average |
 | **Method** | `fillna(mean)` |
-| **Result** | 0 nulls → Preserves overall distribution |
+| **Result** | 0 nulls |
+
+**Stats (Raw):**
+| Stat | Value |
+|---|---|
+| Mean | 2.2032 |
+| Median | 2.9000 |
+| Mode | 0.0 |
+| Std Dev | 2.1062 |
+| Skewness | -0.0021 |
+| Kurtosis | -1.8598 |
 
 ---
 
 ### 3. Rating Count — 22,883 Nulls
 | | |
 |---|---|
-| **Problem** | Missing rating counts |
-| **Fix** | Filled with **Median** |
-| **Why Median?** | Highly skewed data with extreme outliers |
+| **Problem** | Missing counts |
+| **Fix** | Filled with **Median = 6** |
+| **Why Median?** | Extremely skewed data |
 | **Method** | `fillna(median)` |
 | **Result** | 0 nulls |
+
+**Stats (Raw):**
+| Stat | Value |
+|---|---|
+| Mean | 2,864.84 |
+| Median | 6.0 |
+| Mode | 0.0 |
+| Skewness | 425.83 |
+| Kurtosis | 227,234.40 |
 
 ---
 
 ### 4. Size — 196 Nulls + Text Format
 | | |
 |---|---|
-| **Problem** | Text values like "10M", "Varies with device" |
-| **Fix** | Converted to numeric (`Size_MB`) |
-| **Null Handling** | Filled with **Median (13 MB)** |
-| **Why Median?** | Skewed distribution |
+| **Problem** | Text values + missing |
+| **Fix** | Converted to `Size_MB` |
+| **Null Handling** | Filled with **Median = 13 MB** |
+| **Why Median?** | Skewed distribution (few huge apps) |
 | **Method** | `convert + fillna(median)` |
 | **Result** | 0 nulls |
 
+**Stats (Raw):**
+| Stat | Value |
+|---|---|
+| Mean | 26 MB |
+| Median | 13 MB |
+
 ---
 
-### 5. Installs — 107 Nulls + Text Format
+### 5. Installs — 107 Nulls
 | | |
 |---|---|
-| **Problem** | Values like "1,000,000+" |
-| **Fix** | Converted to numeric (`Installs_Numeric`) |
+| **Problem** | Text + missing |
+| **Fix** | Converted to numeric |
 | **Null Handling** | Filled with **Median** |
 | **Why Median?** | Highly right-skewed |
-| **Method** | `clean + fillna(median)` |
 | **Result** | 0 nulls |
 
 ---
@@ -72,9 +94,7 @@
 ### 6. Minimum Installs — 107 Nulls
 | | |
 |---|---|
-| **Problem** | Missing values |
 | **Fix** | Filled with **Median** |
-| **Why Median?** | Keeps realistic install scale |
 | **Result** | 0 nulls |
 
 ---
@@ -82,9 +102,8 @@
 ### 7. Currency — 135 Nulls + 'XXX'
 | | |
 |---|---|
-| **Problem** | Missing + invalid values |
-| **Fix** | Replaced 'XXX' → NULL → Filled with **Mode ('USD')** |
-| **Why Mode?** | Categorical data |
+| **Fix** | Filled with **Mode = USD** |
+| **Why Mode?** | Categorical |
 | **Result** | 0 nulls |
 
 ---
@@ -92,9 +111,7 @@
 ### 8. Minimum Android — 6,530 Nulls
 | | |
 |---|---|
-| **Problem** | Missing Android version |
-| **Fix** | Filled with **Mode** |
-| **Why Mode?** | Most common valid version |
+| **Fix** | Filled with **Mode = '4.1 and up'** |
 | **Result** | 0 nulls |
 
 ---
@@ -102,9 +119,7 @@
 ### 9. Developer Website — 760,835 Nulls
 | | |
 |---|---|
-| **Problem** | Many missing values |
 | **Fix** | Filled with **Mode** |
-| **Why Mode?** | Categorical feature |
 | **Result** | 0 nulls |
 
 ---
@@ -112,7 +127,6 @@
 ### 10. Developer Email — 31 Nulls
 | | |
 |---|---|
-| **Problem** | Missing emails |
 | **Fix** | Filled with **Mode** |
 | **Result** | 0 nulls |
 
@@ -121,7 +135,6 @@
 ### 11. Developer Id — 33 Nulls
 | | |
 |---|---|
-| **Problem** | Missing IDs |
 | **Fix** | Filled with **Mode** |
 | **Result** | 0 nulls |
 
@@ -130,9 +143,7 @@
 ### 12. Released — 71,053 Nulls
 | | |
 |---|---|
-| **Problem** | Missing release dates |
 | **Fix** | Filled with **Mode** |
-| **Why Mode?** | Avoids guessing incorrect dates |
 | **Result** | 0 nulls |
 
 ---
@@ -140,9 +151,7 @@
 ### 13. Privacy Policy — 420,953 Nulls
 | | |
 |---|---|
-| **Problem** | Missing links |
 | **Fix** | Filled with **Mode** |
-| **Why Mode?** | Categorical |
 | **Result** | 0 nulls |
 
 ---
@@ -150,14 +159,12 @@
 ### 14. Last Updated — String Format
 | | |
 |---|---|
-| **Problem** | Stored as text |
 | **Fix** | Converted to datetime |
 | **Method** | `pd.to_datetime()` |
-| **Result** | Usable date format |
 
 ---
 
-## ✅ Final Numbers
+## 📈 Final Numbers
 
 | Metric | Before | After |
 |---|---|---|
